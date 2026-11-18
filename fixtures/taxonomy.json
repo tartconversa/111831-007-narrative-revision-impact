@@ -1,0 +1,42 @@
+{
+  "versions": [
+    {
+      "version_id": "v1",
+      "effective_from": "2026-01-01",
+      "note": "初始口径：安全与合作两大类。",
+      "categories": [
+        {"code": "international-cooperation", "label": "国际合作", "definition": "国家间在多边机制下的协作报道。"},
+        {"code": "security", "label": "安全议题", "definition": "涉及军事、经济与社会安全的综合报道。"}
+      ]
+    },
+    {
+      "version_id": "v2",
+      "effective_from": "2026-06-01",
+      "note": "安全议题拆分为军事安全与经济安全；新增气候议题。",
+      "categories": [
+        {"code": "international-cooperation", "label": "国际合作", "definition": "国家间在多边机制下的协作报道。"},
+        {"code": "military-security", "label": "军事安全", "definition": "军事部署、冲突与防务合作报道。"},
+        {"code": "economic-security", "label": "经济安全", "definition": "贸易、供应链与金融风险报道。"},
+        {"code": "climate", "label": "气候议题", "definition": "气候变化与气候政策报道。"}
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "from_version": "v1",
+      "to_version": "v2",
+      "old_code": "international-cooperation",
+      "new_codes": ["international-cooperation"],
+      "kind": "one_to_one"
+    },
+    {
+      "from_version": "v1",
+      "to_version": "v2",
+      "old_code": "security",
+      "new_codes": ["military-security", "economic-security"],
+      "kind": "split",
+      "note": "拆分后观察级归属须逐条复核；证据不足的历史观察保持未决。"
+    }
+  ],
+  "reclassifications": []
+}
